@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form method="post" action="">
+					<form method="post" action="check_pass.php">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -56,13 +56,10 @@
 
 	<?php
 
-			if(isset($_POST['login']))
+			/*if(isset($_POST['login']))
 			{
 				$admin_username = $_POST['username'];
 				$admin_password = $_POST['password'];
-
-				//echo $admin_username;
-				//echo $admin_password;
 
 				$sel_admin = "select * from admin where admin_username='$admin_username' AND admin_password='$admin_password'";
 				$run_admin = mysqli_query($conn, $sel_admin);
@@ -76,10 +73,10 @@
 				else
 				{
 					echo "<script>alert('You logged in succesfully.')</script>";
-					//echo "<script>window.open('index.php', '_self')</script>";
 				}
-			}
+			}*/
 
 	?>
+
 </body>
 </html>
