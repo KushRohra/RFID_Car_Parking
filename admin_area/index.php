@@ -54,29 +54,5 @@
 		</div>
 	</div>
 
-	<?php
-
-			/*if(isset($_POST['login']))
-			{
-				$admin_username = $_POST['username'];
-				$admin_password = $_POST['password'];
-
-				$sel_admin = "select * from admin where admin_username='$admin_username' AND admin_password='$admin_password'";
-				$run_admin = mysqli_query($conn, $sel_admin);
-				$check_admin = mysqli_num_rows($run_admin);
-
-				if($check_admin == 0)
-				{
-					echo "<script>alert('Password or email is incorrect, pls try again!')</script>";
-					exit();
-				}
-				else
-				{
-					echo "<script>alert('You logged in succesfully.')</script>";
-				}
-			}*/
-
-	?>
-
 </body>
 </html>

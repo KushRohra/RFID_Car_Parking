@@ -16,11 +16,15 @@
   }
   else
   {
-
+		$admin = mysqli_fetch_array($run_admin);
+		$admin['admin_flag'];
+		if($admin['admin_flag']==1)
+			echo "<script>window.open('admin_dashboard.php', '_self')</script>";
+		else {
 ?>
 
 <!-- HTML for changing password for the first time -->
   <h2>Change password</h2>
 
 
-<?php } ?>
+<?php } }?>
