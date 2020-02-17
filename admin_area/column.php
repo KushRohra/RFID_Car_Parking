@@ -15,13 +15,28 @@
 <body>
 
     <div class = "container">
-      <h1 class = "jumbotron text-center">XYZ</h1>
+      <h1 class = "jumbotron text-center">Enter the following details</h1>
         <form method="post">
             <div class="form-group">
-              <label for="integer">Integer</label>
-              <input type="integer" class="form-control" id="newinteger" aria-describedby="integer" placeholder="Enter number" name="no_of_time_slots">
+              <label for="integer">Number of price slots for 2 wheelers</label>
+              <input type="integer" class="form-control" id="newinteger" aria-describedby="integer" placeholder="Enter number" name="no_of_time_slots_2">
             </div>
             <br>
+            <div class="form-group">
+              <label for="integer">Number of price slots for 4 wheelers</label>
+              <input type="integer" class="form-control" id="newinteger" aria-describedby="integer" placeholder="Enter number" name="no_of_time_slots_4">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="integer">Number of parking spaces for 2 wheelers</label>
+              <input type="integer" class="form-control" id="newinteger" aria-describedby="integer" placeholder="Enter number" name="parking_slots_2">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="integer">Number of parking spaces for 4 wheelers</label>
+              <input type="integer" class="form-control" id="newinteger" aria-describedby="integer" placeholder="Enter number" name="parking_slots_4">
+            </div>
+
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
@@ -33,16 +48,30 @@
 
     if(isset($_POST['submit']))
     {
-        $no_of_time_slots = $_POST['no_of_time_slots'];
-        $admin_username = $_SESSION['username'];
+        $no_of_time_slots_2 = $_POST['no_of_time_slots_2'];
+        $no_of_time_slots_4 = $_POST['no_of_time_slots_4'];
+        $parking_slot_2 = $_POST['parking_slots_2'];
+        $parking_slot_4 = $_POST['parking_slots_4'];
+        $admin_username = $_SESSION["username"];
+
+        
+
         $admin_flag = 1;
 
-        $update_time_slots = "update admin set no_of_time_slots='$no_of_time_slots' where admin_username='$admin_username'";
+
+
+        $update_time_slots = "update admin set no_of_time_slots_2='$no_of_time_slots_2' where admin_username='$admin_username'";
         $run_time_slots = mysqli_query($conn, $update_time_slots);
+        $update_time_slots_1 = "update admin set no_of_time_slots_4='$no_of_time_slots_4' where admin_username='$admin_username'";
+        $run_time_slots_1 = mysqli_query($conn, $update_time_slots_1);
+        $update_time_slots_2 = "update admin set parking_slots_2='$parking_slot_2' where admin_username='$admin_username'";
+        $run_time_slots_2 = mysqli_query($conn, $update_time_slots_2);
+        $update_time_slots_3 = "update admin set parking_slots_4='$parking_slot_4' where admin_username='$admin_username'";
+        $run_time_slots_3 = mysqli_query($conn, $update_time_slots_3);
         $update_flag = "update admin set admin_flag='$admin_flag' where admin_username='$admin_username'";
         $run_flag = mysqli_query($conn, $update_flag);
-        echo "<script>alert('Your time slots are updated')</script>";
-        echo "<script>window.open('pricing.php', '_self')</script>";
+        echo "<script>alert('Your details are updated')</script>";
+        echo "<script>window.open('pricing_2.php', '_self')</script>";
     }
 
 ?>
