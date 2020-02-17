@@ -10,6 +10,9 @@
     <head>
         <meta charset="utf-8">
         <title>Hello</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!--Fontawesome CDN-->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     </head>
     <body>
         <?php
@@ -28,15 +31,15 @@
                     
         <form method="post">
             <?php
-                echo "<h3>Enter the pricing details for 4 wheelers</h3><br>";
+                echo "<h1 class = 'jumbotron text-center'>Enter the pricing details for 4 wheelers</h3><br>";
                 for($i=0; $i<$no_of_4; $i++)
                 {
                     $minutes = "minutes_".$i."_1";
                     $price = "price_".$i."_1";
                     echo "
-                              Time: <input type='integer' name='$minutes' placeholder='Enter the time in minutes'>
+                              Time: <input required type='integer' class = 'form-control' name='$minutes' placeholder='Enter the time in hours'>
                               <br>
-                              Price: <input type='integer' name='$price' placeholder='Enter the price in Rupees'>
+                              Price: <input required type='integer' class = 'form-control' name='$price' placeholder='Enter the price in Rupees'>
                               <br>
                               <br>
                          ";
