@@ -70,6 +70,41 @@
         $run_time_slots_3 = mysqli_query($conn, $update_time_slots_3);
         $update_flag = "update admin set admin_flag='$admin_flag' where admin_username='$admin_username'";
         $run_flag = mysqli_query($conn, $update_flag);
+
+        $shop_name = $_SESSION['username'];
+        $shop_name = strtolower($shop_name);
+        $shop_name = $shop_name."_2"; 
+        $create_table = "CREATE TABLE $shop_name (
+                            id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                            lot_no INT(11),
+                            parked INT(11)
+                            )";
+        $run_table = mysqli_query($conn, $create_table);
+        for($i=0; $i<$parking_slot_2; $i++)
+        {
+            $id = $i+1;
+            $def = 0; 
+            $insert = "insert into $shop_name(lot_no, parked) values('$id', '$def')";
+            $run_insert = mysqli_query($conn, $insert);
+        }
+        
+        $shop_name = $_SESSION['username'];
+        $shop_name = strtolower($shop_name);
+        $shop_name = $shop_name."_4"; 
+        $create_table = "CREATE TABLE $shop_name (
+                            id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                            lot_no INT(11),
+                            parked INT(11)
+                            )";
+        $run_table = mysqli_query($conn, $create_table);
+        for($i=0; $i<$parking_slot_4; $i++)
+        {
+            $id = $i+1;
+            $def = 0; 
+            $insert = "insert into $shop_name(lot_no, parked) values('$id', '$def')";
+            $run_insert = mysqli_query($conn, $insert);
+        }
+
         echo "<script>alert('Your details are updated')</script>";
         echo "<script>window.open('pricing_2.php', '_self')</script>";
     }

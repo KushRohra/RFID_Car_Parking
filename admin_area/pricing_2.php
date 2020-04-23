@@ -22,7 +22,7 @@
             $run_query = mysqli_query($conn, $query);
             $row_query = mysqli_fetch_array($run_query);
 
-            $shop_name = $row_query['shop_name'];
+            $shop_name = $admin_username;
             $shop_name = strtolower($shop_name);
             $shop_name = $shop_name."_price"; 
             $create_table = "CREATE TABLE $shop_name (
@@ -61,8 +61,6 @@
 
             if(isset($_POST['submit']))
             {
-                echo "2 wheelers";
-                echo "<br>";
                 for($i=0; $i<$no_of_2; $i++)
                 {
                     $minutes = "minutes_".$i."_0";
