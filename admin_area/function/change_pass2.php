@@ -25,7 +25,7 @@
           <label for="newpassword">New Password</label>
           <input type="password" class="form-control" id="newpassword" placeholder=" New password" name = "repass">
         </div>
-        <br>
+        
         <div class="form-group">
             <label for="newpasswordagain">New Password Again</label>
             <input type="password" class="form-control" id="newretypepassword" placeholder="New password again" name = "repass">
