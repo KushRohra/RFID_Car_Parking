@@ -17,15 +17,15 @@
   <h1 class = "jumbotron text-center">Welcome to Admin Dashboard</h1>
 
   <ul class="list-group">
-    <li class="list-group-item">Change password</li>
-    <li class="list-group-item">See status of parking lot</li>
-    <li class="list-group-item">See all details</li>
-    <li class="list-group-item">Current cost details</li>
-    <li class="list-group-item">Current Costing details</li>
-    <li class="list-group-item">Change 2 wheeler cost</li>
-    <li class="list-group-item">Change 4 wheeler cost</li>
-    <li class="list-group-item">Change 2 wheeler parking slots</li>
-    <li class="list-group-item">Change 4 wheeler parking cost</li>
+    <li class="list-group-item"><a href="function/change_pass2.php">Change password</a></li>
+    <li class="list-group-item"><a href="function/parking_lot.php">See status of parking lot</a></li>
+    <li class="list-group-item"><a href="function/details.php">See all details</a></li>
+    <li class="list-group-item"><a href="function/cost.php">Current cost details</a></li>
+    <li class="list-group-item"><a href="function/parking.php">Current Parking details</a></li>
+    <li class="list-group-item"><a href="function/twocost.php">Change 2 wheeler cost</a></li>
+    <li class="list-group-item"><a href="function/fourcost.php">Change 4 wheeler cost</a></li>
+    <li class="list-group-item"><a href="function/twoslot.php">Change 2 wheeler parking slots</a></li>
+    <li class="list-group-item"><a href="function/fourslot.php">Change 4 wheeler parking cost</a></li>
   </ul>
 
   </div>
