@@ -15,18 +15,17 @@
 <body>
     <div class = "container">  
   <h1 class = "jumbotron text-center">Welcome to Admin Dashboard</h1>
-
-  <ul class="list-group">
-    <li class="list-group-item"><a href="function/change_pass2.php">Change password</a></li>
-    <li class="list-group-item"><a href="function/parking_lot.php">See status of parking lot</a></li>
-    <li class="list-group-item"><a href="function/details.php">See all details</a></li>
-    <li class="list-group-item"><a href="function/cost.php">Current cost details</a></li>
-    <li class="list-group-item"><a href="function/parking.php">Current Parking details</a></li>
-    <li class="list-group-item"><a href="function/twocost.php">Change 2 wheeler cost</a></li>
-    <li class="list-group-item"><a href="function/fourcost.php">Change 4 wheeler cost</a></li>
-    <li class="list-group-item"><a href="function/twoslot.php">Change 2 wheeler parking slots</a></li>
-    <li class="list-group-item"><a href="function/fourslot.php">Change 4 wheeler parking cost</a></li>
-  </ul>
+  <div class="list-group">
+    <a href="function/change_pass2.php" class="list-group-item" class = "text-dark">Change password</a>
+    <a href="function/parking_lot.php" class="list-group-item" class = "text-dark">See status of parking lot</a>
+    <a href="function/details.php" class="list-group-item" class = "text-dark">See all details</a>
+    <a href="function/cost.php" class="list-group-item" class = "text-dark">Current cost details</a>
+    <a href="function/parking.php" class="list-group-item" class = "text-dark">Current Parking details</a>
+    <a href="function/twocost.php" class="list-group-item" class = "text-dark">Change 2 wheeler cost</a>
+    <a href="function/fourcost.php" class="list-group-item" class = "text-dark">Change 4 wheeler cost</a>
+    <a href="function/twoslot.php" class="list-group-item" class = "text-dark">Change 2 wheeler parking slots</a></li>
+    <a href="function/fourslot.php" class="list-group-item" class = "text-dark">Change 4 wheeler parking cost</a>
+  </div>
 
   </div>
     
