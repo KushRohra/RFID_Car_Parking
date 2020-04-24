@@ -23,7 +23,7 @@
     <a href="function/parking.php" class="list-group-item" class = "text-dark">Current Parking details</a>
     <a href="function/twocost.php" class="list-group-item" class = "text-dark">Change 2 wheeler cost</a>
     <a href="function/fourcost.php" class="list-group-item" class = "text-dark">Change 4 wheeler cost</a>
-    <a href="function/twoslot.php" class="list-group-item" class = "text-dark">Change 2 wheeler parking slots</a></li>
+    <a href="function/twoslot.php" class="list-group-item" class = "text-dark">Change 2 wheeler parking slots</a>
     <a href="function/fourslot.php" class="list-group-item" class = "text-dark">Change 4 wheeler parking cost</a>
   </div>
 
