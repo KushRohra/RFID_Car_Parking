@@ -1,3 +1,10 @@
+<?php
+  
+  session_start();
+  include("../../database/db.php");
+
+?>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,16 +33,28 @@
         <br>
        <div class="d-flex flex-column bd-highlight mb-6">
         <div class="btn-group-vertical">
+            <a href="../admin_dashboard.php"><button type="button" class="btn btn-primary">Go to Admin Dashboard</button></a>
             <br>
-            <button type="button" class="btn btn-info ">2 Wheeler</button>
             <br>
-            <button type="button" class="btn btn-info ">4 Wheeler</button>
-           
+            <a href="cost.php?2_cost"><button type="button" class="btn btn-info btn-sm">2 Wheeler</button></a>
+            <br>
+            <a href="cost.php?4_cost"><button type="button" class="btn btn-info btn-sm">4 Wheeler</button></a> 
           </div>
         
       </div>
       <div class="d-flex flex-column-reverse bd-highlight">
-        
+          <?php
+
+            if(isset($_GET['2_cost']))
+            {
+              include("2cost.php");
+            }
+            if(isset($_GET['4_cost']))
+            {
+              include("4cost.php");
+            }
+
+          ?>
       </div>
     </div>
      
