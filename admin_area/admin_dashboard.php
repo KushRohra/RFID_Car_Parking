@@ -25,7 +25,11 @@
     <a href="function/fourcost.php" class="list-group-item" class = "text-dark">Change 4 wheeler cost</a>
     <a href="function/twoslot.php" class="list-group-item" class = "text-dark">Change 2 wheeler parking slots</a>
     <a href="function/fourslot.php" class="list-group-item" class = "text-dark">Change 4 wheeler parking cost</a>
-  </div>
+</div>
+	 <br>
+   <div class="text-center">
+        <button type="button" class="btn btn-outline-danger btn-lg text-center">LogOut</button>
+   </div>
 
   </div>
     
