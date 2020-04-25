@@ -9,7 +9,7 @@
     $create_table = "CREATE TABLE $shop_name (
                         id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                         tag_id INT(11),
-                        entrytime INT(20),
+                        entrytime BIGINT(20),
                         type INT(11),
                         lotno INT(11)
                         )";
@@ -21,8 +21,8 @@
     $create_table = "CREATE TABLE $shop_name (
                         id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                         tag_id INT(11),
-                        entrytime INT(20),
-                        exittime INT(20),
+                        entrytime BIGINT(20),
+                        exittime BIGINT(20),
                         cost INT(11),
                         type INT(11),
                         lotno INT(11)

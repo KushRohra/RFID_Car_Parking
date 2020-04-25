@@ -1,3 +1,10 @@
+<?php
+  
+  session_start();
+  include("../../database/db.php");
+
+?>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,8 +36,35 @@
                 <th scope="col">2 or 4 wheeler</th>
               </tr>
             </thead>
-            <tbody>
-              
+            <tbody> 
+                <?php 
+                    $admin_username = $_SESSION['username'];
+                    $shop_name = strtolower($admin_username);
+                    $shop_name = $shop_name."_pp";
+
+                    $flag = 0;    
+                    $query = "select * from $shop_name";
+                    $run_query = mysqli_query($conn, $query);
+                    while ($row_query = mysqli_fetch_array($run_query))
+                    {
+                        $tag_id = $row_query['tag_id'];
+                        $entrytime = $row_query['entrytime'];
+                        $exittime = $row_query['exittime'];
+                        $parking_no = $row_query['lotno'];
+                        $cost = $row_query['cost'];
+                        if($row_query['type']==0)
+                          $type = "2 Wheeler"; 
+                        else $type = "4 Wheeler";
+                ?>
+                  <tr>
+                    <td><?php echo $tag_id ?></td>
+                    <td><?php date_default_timezone_set("Asia/Calcutta"); echo date('d-m-Y H:i:s', $entrytime/1000); ?></td>
+                    <td><?php date_default_timezone_set("Asia/Calcutta"); echo date('d-m-Y H:i:s', $exittime/1000); ?></td>
+                    <td><?php echo $cost ?></td>
+                    <td><?php echo $parking_no ?></td>   
+                    <td><?php echo $type ?></td>
+                  </tr>
+                <?php } ?>
             </tbody>
           </table>
     </div>    

@@ -1,3 +1,10 @@
+<?php
+  
+  session_start();
+  include("../../database/db.php");
+
+?>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,6 +29,12 @@
 </head>
 
 <body>
+
+    <div style="margin-top: 20px; margin-bottom: -15px;" class="container d-flex flex-column bd-highlight mb-6">
+        <div class="btn-group-vertical">
+            <a href="../admin_dashboard.php"><button type="button" class="btn btn-primary">Go to Admin Dashboard</button></a>
+        </div>        
+      </div>
     <div class="container">
         <br>
         <table class="table">
@@ -32,16 +45,34 @@
                 <th scope="col">Parking Time</th>
                 <th scope="col">2 or 4 Wheeler</th>
                 <th scope="col">Lot No.</th>
-                
               </tr>
             </thead>
             <tbody>
-              
+              <?php 
+                $admin_username = $_SESSION['username'];
+                $shop_name = strtolower($admin_username);
+                $shop_name = $shop_name."_tp";
+
+                $flag = 0;    
+                $query = "select * from $shop_name";
+                $run_query = mysqli_query($conn, $query);
+                while ($row_query = mysqli_fetch_array($run_query))
+                {
+                    $tag_id = $row_query['tag_id'];
+                    $entrytime = $row_query['entrytime'];
+                    $parking_no = $row_query['lotno'];
+                    if($row_query['type']==0)
+                      $type = "2 Wheeler"; 
+                    else $type = "4 Wheeler";
+                ?>
+              <tr>
+                <td><?php echo $tag_id ?></td>
+                <td><?php date_default_timezone_set("Asia/Calcutta"); echo date('d-m-Y H:i:s', $entrytime/1000); ?></td>
+                <td><?php echo $type ?></td>
+                <td><?php echo $parking_no ?></td>   
+              </tr>
+            <?php } ?>
             </tbody>
           </table>
-    </div>
-     
-
-  
-    
+    </div>    
 </body>
