@@ -106,7 +106,7 @@
         }
 
         echo "<script>alert('Your details are updated')</script>";
-        echo "<script>window.open('pricing_2.php', '_self')</script>";
+        echo "<script>window.open('parking.php', '_self')</script>";
     }
 
 ?>
