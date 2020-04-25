@@ -57,7 +57,7 @@
                 for($i=0; $i<$no_of_4; $i++)
                 {
                     $minutes = "minutes_".$i."_1";
-                    $price = "minutes_".$i."_1";
+                    $price = "price_".$i."_1";
                     $flag = 1;
                     $min = $_POST[$minutes];
                     $pri = $_POST[$price];
