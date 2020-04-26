@@ -32,9 +32,9 @@
 
     <div style="margin-top: 20px; margin-bottom: -15px;" class="container d-flex flex-column bd-highlight mb-6">
         <div class="btn-group-vertical">
-            <a href="../details.php"><button type="button" class="btn btn-primary">Go to Admin Dashboard</button></a>
+            <a href="../admin_dashboard.php"><button type="button" class="btn btn-primary">Go to Admin Dashboard</button></a>
         </div>        
-      </div>
+     </div>
     <div class="container">
         <br>
         <table class="table">

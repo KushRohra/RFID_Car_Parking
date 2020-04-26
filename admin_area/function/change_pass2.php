@@ -36,6 +36,10 @@
         <div>
           <input type="submit" name="change_pass" class="btn btn-success">
         </div>
+        <br>
+        <div>
+          <input type="submit" name="cancel" value="Cancel" class="btn btn-danger">
+        </div>
       </div>
       </form>
   </div>
@@ -44,6 +48,10 @@
 
 <?php
   $admin_username = $_SESSION['username'];
+  if(isset($_POST['cancel']))
+  {
+      echo "<script>window.open('../admin_dashboard.php', '_self')</script>";
+  }
   if(isset($_POST['change_pass']))
   {
       $oldpassword = $_POST['oldpass'];
