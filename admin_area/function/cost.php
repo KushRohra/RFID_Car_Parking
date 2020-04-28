@@ -40,8 +40,8 @@
             <br>
             <a href="cost.php?4_cost"><button type="button" class="btn btn-info btn-sm">4 Wheeler</button></a> 
           </div>
-        
       </div>
+      
       <div class="d-flex flex-column-reverse bd-highlight">
           <?php
 

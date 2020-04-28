@@ -16,6 +16,19 @@
           $two_parked = $two_parked + 1;
   }
 
+  $shop_name = $_SESSION['username'];
+  $shop_name = $shop_name."_4";
+  $query = "select * from $shop_name";
+  $four = 0;
+  $four_parked = 0;
+  $run_query = mysqli_query($conn, $query);
+  while($array = mysqli_fetch_array($run_query))
+  {
+      $four = $four + 1;
+      if($array['parked'] == 0)
+          $four_parked = $four_parked + 1;
+  }
+
 ?>
 
 
@@ -53,18 +66,19 @@
           <tr>
             <th scope="row">2</th>
             <td>4 Wheeler</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php echo $four; ?></td>
+            <td><?php echo $four_parked; ?></td>
           </tr>
         </tbody>
       </table>
-      
+        
+      <br>
+
+      <div class="btn-group-vertical">
+            <a href="../admin_dashboard.php"><button type="button" class="btn btn-primary">Go to Admin Dashboard</button></a>
+            <br>
+      </div>
+
     </div>
    </body>
  </html>
