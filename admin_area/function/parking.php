@@ -18,8 +18,8 @@
           <tr>
             <th scope="col">S.NO</th>
             <th scope="col">Type of Vehicle</th>
-            <th scope="col">Parking Space Available</th>
-            
+            <th scope="col">Total Parking Space Available</th>
+            <th scope="col">Current Parking Space Available</th>
           </tr>
         </thead>
         <tbody>
@@ -27,22 +27,20 @@
             <th scope="row">1</th>
             <td>2 Wheeler</td>
             <td></td>
-          
+            <td></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>4 Wheeler</td>
             <td></td>
-            
+            <td></td>
           </tr>
-
           <tr>
             <th scope="row"></th>
             <td></td>
             <td></td>
-            
+            <td></td>
           </tr>
-          
         </tbody>
       </table>
       
