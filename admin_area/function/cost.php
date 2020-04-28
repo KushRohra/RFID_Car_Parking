@@ -1,5 +1,5 @@
 <?php
-  
+  header("Refresh: 100");
   session_start();
   include("../../database/db.php");
 
