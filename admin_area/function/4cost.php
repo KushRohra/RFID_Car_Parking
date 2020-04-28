@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class = "jumbotron text-center">4 Wheeler Parking Cost</h1>
+    <h1 class = "text-center">4 Wheeler Parking Cost</h1>
     <table class="table table-striped table-bordered">
         <br>
         <thead>
