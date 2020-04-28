@@ -15,18 +15,19 @@
      <div class = "container">
        <h1 class = "jumbotron text-center">VEHCILE ENTRY</h1>
 
-        <form>
+        <form method="POST">
           <div class="form-group">
 
             <label for="rfid">RFID of vehicle</label>
-            <input type="text" class="form-control" id="rfid"  placeholder="Enter RFID of vehicle " >
+            <input type="text" class="form-control" id="rfid" name="rfid" placeholder="Enter RFID of vehicle " >
 
           </div>
           <div class="form-group">
             <label for="typeofvehicle">Type of vehicle</label>
-            <input type="text" class="form-control" id="retypepassword" placeholder="Enter type of vehivle" >
+            <input type="text" class="form-control" id="vehicle" name="vehicle" placeholder="Enter type of vehivle" >
           </div>
          
+         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
    </body>
@@ -38,47 +39,48 @@
 	include("../database/db.php");
 
 	session_start();
-	$admin_username = $_SESSION['username'];
-
-	$id = $_GET['rfid'];
-	$time = $_GET['time'];
-	$type = $_GET['vehicle'];
-
-	/*$rfid = 56;
-	$time = 45565487;
-	$type = 0; */
-
-	$shop_name = strtolower($admin_username);
-	if($type == 0)
-		$shop_name = $shop_name."_2";
-	else
-		$shop_name = $shop_name."_4";
-
-	$query = "select * from $shop_name";
-	$run_query = mysqli_query($conn, $query);
-	$flag = 0; 
-	while($array = mysqli_fetch_array($run_query))
+	if(isset($_POST['submit']))
 	{
-		if($array['parked']==0)
-		{
-			$index = $array['lot_no'];
-			$flag = 1;
-			$update_query = "update $shop_name set parked='$flag' where lot_no='$index'";
-			$run_upadte_query = mysqli_query($conn, $update_query);
-		}
-		if($flag==1)
-			break;
-	}
+		$admin_username = $_SESSION['username'];
 
-	if($flag == 1)
-	{
+		$id = $_POST['rfid'];
+		$time = (int)(microtime(true)*1000);
+		$type = $_POST['vehicle'];
+
 		$shop_name = strtolower($admin_username);
-		$shop_name = $shop_name."_tp";
-		$insert = "insert into $shop_name(tag_id, entrytime, type, lotno) values('$id', '$time', 'type', '$index')";
-	    $run_insert = mysqli_query($conn, $insert);
+		if($type == 0)
+			$shop_name = $shop_name."_2";
+		else
+			$shop_name = $shop_name."_4";
+
+		$query = "select * from $shop_name";
+		$run_query = mysqli_query($conn, $query);
+		$flag = 0; 
+		while($array = mysqli_fetch_array($run_query))
+		{
+			if($array['parked']==0)
+			{
+				$index = $array['lot_no'];
+				$flag = 1;
+				$update_query = "update $shop_name set parked='$flag' where lot_no='$index'";
+				$run_upadte_query = mysqli_query($conn, $update_query);
+			}
+			if($flag==1)
+				break;
+		}
+
+		if($flag == 1)
+		{
+			$shop_name = strtolower($admin_username);
+			$shop_name = $shop_name."_tp";
+			$insert = "insert into $shop_name(tag_id, entrytime, type, lotno) values('$id', '$time', '$type', '$index')";
+		    $run_insert = mysqli_query($conn, $insert);
+		}	
+		else
+		{
+			echo "<h3>No parking space available</h3>";
+			echo "<br>";
+		}
 	}
-
-//    json_decode('date':$date);
-
-
+	
 ?>
