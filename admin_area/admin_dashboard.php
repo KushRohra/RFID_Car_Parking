@@ -14,18 +14,23 @@
 </head>
 <body>
     <div class = "container">  
-  <h1 class = "jumbotron text-center">Welcome to Admin Dashboard</h1>
-  <div class="list-group">
-    <a href="function/change_pass2.php" class="list-group-item" class = "text-dark">Change password</a>
-    <a href="function/parking_lot.php" class="list-group-item" class = "text-dark">See status of parking lot</a>
-    <a href="function/details.php" class="list-group-item" class = "text-dark">See all details</a>
-    <a href="function/cost.php" class="list-group-item" class = "text-dark">Current cost details</a>
-    <a href="function/parking.php" class="list-group-item" class = "text-dark">Current Parking details</a>
-</div>
-	 <br>
-   <div class="text-center">
-        <a href="logout.php"><button type="button" class="btn btn-outline-danger btn-lg text-center">LogOut</button></a>
-   </div>
+      <h1 class = "jumbotron text-center">Welcome to Admin Dashboard</h1>
+      <div class="list-group">
+        <a href="function/change_pass2.php" class="list-group-item" class = "text-dark">Change password</a>
+        <a href="function/parking_lot.php" class="list-group-item" class = "text-dark">See status of parking lot</a>
+        <a href="function/details.php" class="list-group-item" class = "text-dark">See all details</a>
+        <a href="function/cost.php" class="list-group-item" class = "text-dark">Current cost details</a>
+        <a href="function/parking.php" class="list-group-item" class = "text-dark">Current Parking details</a>
+      </div>
+    	<br>
+      <div class="text-center">
+        <a href="update.php"><button class="btn btn-lg btn-info">Vehicle Entry</button></a>
+        <a href="update2.php"><button class="btn btn-lg btn-info">Vehicle Exit</button></a>
+      </div>
+      <br>
+      <div class="text-center">
+          <a href="logout.php"><button type="button" class="btn btn-outline-danger btn-lg text-center">LogOut</button></a>
+      </div>
 
   </div>
     
