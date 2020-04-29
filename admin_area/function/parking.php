@@ -55,6 +55,7 @@
             <th scope="col">Type of Vehicle</th>
             <th scope="col">Total Parking Space Available</th>
             <th scope="col">Current Parking Space Available</th>
+            <th>Detailed Info</th>
           </tr>
         </thead>
         <tbody>
@@ -63,12 +64,14 @@
             <td>2 Wheeler</td>
             <td><?php echo $two; ?></td>
             <td><?php echo $two_parked; ?></td>
+            <td><a href="2parking.php"><button class="btn btn-primary">See details</button></a></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>4 Wheeler</td>
             <td><?php echo $four; ?></td>
             <td><?php echo $four_parked; ?></td>
+            <td><a href="4parking.php"><button class="btn btn-primary">See details</button></a></td>
           </tr>
         </tbody>
       </table>
