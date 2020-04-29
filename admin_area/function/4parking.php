@@ -13,6 +13,13 @@
      <div class = "container">
       <h1 class = "jumbotron text-center">4 Wheeler Parking Lot Status</h1>
 
+      <div class="btn-group-vertical">
+            <a href="../admin_dashboard.php"><button type="button" class="btn btn-primary">Go to Admin Dashboard</button></a>
+            <br>
+            <a href="parking.php"><button type="button" class="btn btn-primary">Go to Parking Page</button></a>
+            <br>
+      </div>
+
        <table class="table">
         <thead>
           <tr>
@@ -40,15 +47,7 @@
         </tbody>
         <?php } ?>
       </table>
-        
-      <br>
-
-      <div class="btn-group-vertical">
-            <a href="../admin_dashboard.php"><button type="button" class="btn btn-primary">Go to Admin Dashboard</button></a>
-            <br>
-            <a href="parking.php"><button type="button" class="btn btn-primary">Go to Parking Page</button></a>
-      </div>
-
+      
     </div>
    </body>
  </html>
